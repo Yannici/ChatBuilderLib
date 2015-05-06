@@ -18,29 +18,30 @@ in the source or jar ;)
 ![Example link](https://sc-cdn.scaleengine.net/i/8ce3f82d08a96e88d393cd20d997a325.png)  
 
 Example code for that is:  
+```java
+ChatBuilder builder = new ChatBuilder();
+builder.appendText(ChatColor.YELLOW + "That is my new ");
+            
+ChatElement link = builder.appendText("ChatBuilderLib-Plugin");
+link.setClickEvent(ChatClickEventAction.OPEN_URL, "https://github.com/Yannici/ChatBuilderLib");
+link.setBold(true);
+link.setColor("green");
+link.setHoverEvent(ChatHoverEventAction.SHOW_TEXT, ChatColor.AQUA + "YEAH!");
+link.setUnderlined(true);
+            
+// no attributes
+builder.appendText("! ");
+            
+// one line
+builder.appendText("And I love it!")
+    .setColor(ChatColor.RED)
+    .setItalic(true)
+    .setHoverEvent(ChatHoverEventAction.SHOW_TEXT, ChatColor.GREEN + "SO MUCH!");
+            
+// send to player
+builder.sendToPlayer(player);
+```
 
-    ChatBuilder builder = new ChatBuilder();
-    builder.appendText(ChatColor.YELLOW + "That is my new ");
-            
-    ChatElement link = builder.appendText("ChatBuilderLib-Plugin");
-    link.setClickEvent(ChatClickEventAction.OPEN_URL, "https://github.com/Yannici/ChatBuilderLib");
-    link.setBold(true);
-    link.setColor("green");
-    link.setHoverEvent(ChatHoverEventAction.SHOW_TEXT, ChatColor.AQUA + "YEAH!");
-    link.setUnderlined(true);
-            
-    // no attributes
-    builder.appendText("! ");
-            
-    // one line
-    builder.appendText("And I love it!")
-        .setColor(ChatColor.RED)
-        .setItalic(true)
-        .setHoverEvent(ChatHoverEventAction.SHOW_TEXT, ChatColor.GREEN + "SO MUCH!");
-            
-    // send to player
-    builder.sendToPlayer(player);
-    
 ## Support
 
 Support that project by checking for bugs and creating pull requests or post issues :)  
