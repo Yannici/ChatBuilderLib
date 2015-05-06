@@ -14,7 +14,7 @@ public class ChatTextElement extends ChatElement {
 		return text;
 	}
 
-	public ChatTextElement setText(String text) {
+	public ChatElement setText(String text) {
 		this.text = text;
 		return this;
 	}
