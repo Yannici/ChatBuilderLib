@@ -14,8 +14,8 @@ classes and makes it easy to use for other developers. Very fast I decided to ma
 I think a example should be enough for every developer. All features of this builder they can find
 in the source or jar ;)  
 
-![Example chat](http://screencloud.net/v/sZHN)  
-![Example link](http://screencloud.net/v/jaGI)  
+![Example chat](https://sc-cdn.scaleengine.net/i/4a6125312fa9ebc3b4e23238eb06c42c.png)  
+![Example link](https://sc-cdn.scaleengine.net/i/8ce3f82d08a96e88d393cd20d997a325.png)  
 
 Example code for that is:  
 
