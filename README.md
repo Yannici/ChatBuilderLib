@@ -4,7 +4,7 @@
 
 The **ChatBuilderLib** was developed because I was asking me how I get links or hover effects to the chat.
 So I searched a lot in the internet and found the Chat-Packet of the minecraft packet protocol. I read it and
-thought: Wow, that's easy! But I decided to go a next step: How could I translate that difficult packet protocol to
+thought: Wow, that's easy! But I decided to go a step further: How could I translate that difficult packet protocol to
 classes and makes it easy to use for other developers. Very fast I decided to make it like the StringBuilder of java and ...  
   
 **here we are!**
