@@ -1,6 +1,5 @@
 package io.github.yannici.chatbuilderlib;
 
-import io.github.yannici.chatbuilderlib.chat.elements.ChatTranslateElement;
 import io.github.yannici.chatbuilderlib.chat.events.ChatClickEventAction;
 import io.github.yannici.chatbuilderlib.chat.events.ChatHoverEventAction;
 
@@ -29,13 +28,6 @@ public class Builder extends JavaPlugin implements Listener {
         Builder.instance = this;
         
         this.loadVersion();
-        
-        ChatBuilder builder = new ChatBuilder();
-        ChatTranslateElement translate = (ChatTranslateElement)builder.appendTranslate("multiplayer.player.joined");
-        translate.addWith("Yannici");
-        translate.addWith(4);
-        
-        this.getServer().getConsoleSender().sendMessage(builder.getJson());
     }
     
     @Override
