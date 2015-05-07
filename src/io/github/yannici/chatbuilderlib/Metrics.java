@@ -44,9 +44,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
-import java.net.Authenticator;
-import java.net.InetSocketAddress;
-import java.net.PasswordAuthentication;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
@@ -444,14 +441,6 @@ public class Metrics {
 
         // Create the url
         URL url = new URL(BASE_URL + String.format(REPORT_URL, urlEncode(pluginName)));
-        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("tisproxy", 8080));
-        Authenticator auth = new Authenticator() {
-        	public PasswordAuthentication getPasswordAuthentication() {
-        		return (new PasswordAuthentication("adm-sya", "Schnetzi1".toCharArray()));
-        	}
-		};
-		
-		Authenticator.setDefault(auth);
 
         // Connect to the website
         URLConnection connection;
@@ -461,7 +450,7 @@ public class Metrics {
         if (isMineshafterPresent()) {
             connection = url.openConnection(Proxy.NO_PROXY);
         } else {
-            connection = url.openConnection(proxy);
+            connection = url.openConnection();
         }
 
 
