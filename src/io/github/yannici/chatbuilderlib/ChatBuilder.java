@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.yannici.chatbuilderlib.chat.elements.ChatScoreElement;
+import io.github.yannici.chatbuilderlib.chat.elements.ChatSelectorElement;
 import io.github.yannici.chatbuilderlib.chat.elements.ChatTextElement;
 import io.github.yannici.chatbuilderlib.chat.elements.ChatTranslateElement;
 
@@ -56,6 +57,14 @@ public class ChatBuilder {
 	    
 	    this.elements.add(element);
 	    return element;
+	}
+	
+	public ChatElement appendSelector(String selector) {
+		ChatSelectorElement element = new ChatSelectorElement();
+		element.setSelector(selector);
+		
+		this.elements.add(element);
+		return element;
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
