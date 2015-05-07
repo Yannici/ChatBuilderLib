@@ -3,6 +3,7 @@ package io.github.yannici.chatbuilderlib;
 import io.github.yannici.chatbuilderlib.chat.events.ChatClickEventAction;
 import io.github.yannici.chatbuilderlib.chat.events.ChatHoverEventAction;
 
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -27,12 +28,26 @@ public class Builder extends JavaPlugin implements Listener {
     public void onEnable() {
         Builder.instance = this;
         
+        this.saveDefaultConfig();
         this.loadVersion();
+        this.enableMetrics();
     }
     
     @Override
     public void onDisable() {
         // nothing to do
+    }
+    
+    private void enableMetrics() {
+    	if(this.getConfig().getBoolean("plugin-metrics", true)) {
+			try {
+				Metrics metrics = new Metrics(this);
+				metrics.enable();
+				metrics.start();
+			} catch (IOException e) {
+				// failed metrics
+			}
+    	}
     }
     
     public static Builder getInstance() {

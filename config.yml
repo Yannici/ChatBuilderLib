@@ -1,0 +1,11 @@
+################################
+######## CHATBUILDERLIB ########
+###### CREATED BY YANNICI ######
+################################
+
+# Enable/Disable metrics
+# Metrics will send anonymous information about your server (mostly player count)
+# to a master server which can collect these data and will
+# display nice diagrams and statistics about the plugin.
+# It would be nice when that will stay on true, thanks!
+plugin-metrics: true

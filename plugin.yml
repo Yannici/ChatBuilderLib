@@ -1,6 +1,6 @@
 name: ChatBuilderLib
 main: io.github.yannici.chatbuilderlib.Builder
-version: 1.0.2
+version: 1.0.3
 depend: []
 softdepend: []
 commands:
