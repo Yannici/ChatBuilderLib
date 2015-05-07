@@ -37,6 +37,18 @@ public class ChatBuilder {
         return element;
 	}
 	
+	public ChatElement appendTranslate(String translateKey, List<Object> with) {
+		ChatTranslateElement element = new ChatTranslateElement();
+		element.setKey(translateKey);
+		
+		for(Object wObj : with) {
+			element.addWith(wObj);
+		}
+		
+		this.elements.add(element);
+		return element;
+	}
+	
 	public ChatElement appendScore(String name, String objective) {
 	    ChatScoreElement element = new ChatScoreElement();
 	    element.setName(name);
