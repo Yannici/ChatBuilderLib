@@ -7,7 +7,7 @@
 	<property name="build" location="build" />
 	<property name="dist" location="dist" />
 	<property name="version" value="1.0.3" />
-	<property name="doc" location="/var/www/jd.yannici.de/ChatBuilderLib" />
+	<property name="doc" location="doc" />
 
 	<path id="builder.classpath">
 		<pathelement location="lib/spigot-1.8-R0.1-SNAPSHOT-latest.jar" />
@@ -47,7 +47,8 @@
 		<delete dir="${build}" />
 	</target>
 	
-	<target name="doc" depends="init" description="generate documentation">
+	<target name="doc" description="generate documentation">
+		<mkdir dir="${doc}" />
 	    <javadoc sourcepath="${src}" destdir="${doc}"/>
     </target>
 </project>
