@@ -1,8 +1,22 @@
 package io.github.yannici.chatbuilderlib;
 
+import io.github.yannici.chatbuilderlib.chat.events.ChatClickEvent;
+import io.github.yannici.chatbuilderlib.chat.events.ChatHoverEvent;
+import io.github.yannici.chatbuilderlib.chat.events.ChatInsertionEvent;
+
 import org.json.simple.JSONObject;
 
-public class ChatEvent {
+/**
+ * The abstract class for the chat event types
+ * 
+ * @see ChatClickEvent
+ * @see ChatHoverEvent
+ * @see ChatInsertionEvent
+ * 
+ * @author Yannici
+ *
+ */
+public abstract class ChatEvent {
 	
 	private String action = null;
 	private String value = null;

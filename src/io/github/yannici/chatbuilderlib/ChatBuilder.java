@@ -14,14 +14,32 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.json.simple.JSONObject;
 
+/**
+ * The ChatBuilder class for building a new chat message with this wonderful library.
+ * You just have to initialize an new object of this class and <b>append</b> new texts to this builder.
+ * 
+ * After building you can send this built message to a player by using the <code>sendToPlayer</code>-Method.
+ * 
+ * @author Yannici
+ *
+ */
 public class ChatBuilder {
 	
 	private List<ChatElement> elements = null;
 	
+	/**
+	 * Initialize a new instance for chat builder
+	 */
 	public ChatBuilder() {
 		this.elements = new ArrayList<ChatElement>();
 	}
 	
+	/**
+	 * Append a text to the current builder
+	 * 
+	 * @param The text (may with colorcodes with '&')
+	 * @return The appended ChatElement
+	 */
 	public ChatElement appendText(String text) {
 		ChatTextElement element = new ChatTextElement();
 		element.setText(text);
@@ -30,6 +48,11 @@ public class ChatBuilder {
 		return element;
 	}
 	
+	/**
+	 * Appends a new translateable text
+	 * @param The translation key
+	 * @return The appended ChatElement
+	 */
 	public ChatElement appendTranslate(String translateKey) {
 	    ChatTranslateElement element = new ChatTranslateElement();
         element.setKey(translateKey);
@@ -38,6 +61,12 @@ public class ChatBuilder {
         return element;
 	}
 	
+	/**
+	 * Appends a new translateable texts with parameters
+	 * @param The translation keys
+	 * @param The translation parameters
+	 * @return The appended ChatElement
+	 */
 	public ChatElement appendTranslate(String translateKey, List<Object> with) {
 		ChatTranslateElement element = new ChatTranslateElement();
 		element.setKey(translateKey);
@@ -50,6 +79,12 @@ public class ChatBuilder {
 		return element;
 	}
 	
+	/**
+	 * Appends the score of the given objective
+	 * @param The score name
+	 * @param The objective of the score
+	 * @return The appended ChatElement
+	 */
 	public ChatElement appendScore(String name, String objective) {
 	    ChatScoreElement element = new ChatScoreElement();
 	    element.setName(name);
@@ -59,6 +94,11 @@ public class ChatBuilder {
 	    return element;
 	}
 	
+	/**
+	 * Appends the value of a given selector
+	 * @param The selector which value should be appended
+	 * @return The appended ChatElement
+	 */
 	public ChatElement appendSelector(String selector) {
 		ChatSelectorElement element = new ChatSelectorElement();
 		element.setSelector(selector);
@@ -67,6 +107,9 @@ public class ChatBuilder {
 		return element;
 	}
 	
+	/**
+	 * @return The current JSON-String of this build
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public String getJson() {
 		if(this.elements.size() == 0) {
@@ -93,6 +136,10 @@ public class ChatBuilder {
 		return obj.toJSONString();
 	}
 	
+	/**
+	 * Sends the chat-message to a specific player
+	 * @param The receiver of this chat message
+	 */
 	public void sendToPlayer(Player player) {
 	    this.sendNMS(player, this.getJson());
 	}
